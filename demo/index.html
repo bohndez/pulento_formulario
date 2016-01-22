@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pulento Formulario</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <h1>Pulento Formulario</h1>
+    <div class="contenedor">
+        <form name="unFormulario" action="">
+            <input name="obligatorio" type="text" placeholder="obligatorio">
+            <p id="obligatorioError"></p>
+
+            <input name="numerico" type="text" placeholder="numerico">
+            <p id="numericoError"></p>
+
+            <input name="email" type="text" placeholder="email">
+            <p id="emailError"></p>
+
+            <input name="soloTexto" type="text" placeholder="soloTexto">
+            <p id="soloTextoError"></p>
+
+            <input name="rut" type="text" placeholder="rut">
+            <p id="rutError"></p>
+
+            <input name="telefono" type="text" placeholder="+569 123456789">
+            <p id="telefonoError"></p>
+
+            <input name="fecha" type="text" placeholder="DD-MM-AAAA">
+            <p id="fechaError"></p>
+            
+            <input name="opcion" type="radio" value="uno"> uno
+            <input name="opcion" type="radio" value="dos"> dos
+            <input name="opcion" type="radio" value="tres"> tres
+            <p id="opcionError"></p>
+
+            <textarea name="textArea" id="" cols="30" rows="10"></textarea>
+            <p id="textAreaError"></p>
+
+            <select name="select" id="">
+                <option value="">elija uno</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            <p id="listaError"></p>
+
+            <input type="checkbox" name="checkbox" value="chequeado"> seleccione.
+            <p id="checkboxError"></p>
+
+            <input name="btn" id="enviar" type="submit" value="enviar">
+        </form>
+    </div>
+    <div id="modal1" class="oculto">
+        <p>¡PULENTO!</p>
+        <div class="cerrar">CERRAR</div>
+    </div>
+    <div id="modal2" class="oculto">
+        <p>¡MALASO!</p>
+        <div class="cerrar">CERRAR</div>
+    </div>
+
+<script src="js/PulentoFormulario.min.js"></script>
+<script src="js/functions.js"></script>
+</body>
+</html>
