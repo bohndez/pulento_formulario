@@ -41,7 +41,7 @@ Uso
 <script src="js/functions.js"></script>
 ```
 
-- 3- En tu HTML deverás tener un campo con su "name" y un elemento html con un "id" donde irá el mensaje de error (puede ser un p, span, div, etc) y el elemento que al hacer click lo validará. Por ejemplo:
+- 3- En tu HTML deberás tener un campo con su "name" y un elemento html con un "id" donde irá el mensaje de error (puede ser un p, span, div, etc) y el elemento que al hacer click lo validará. Por ejemplo:
 
 ```sh
 <form name="unFormulario" action="">
@@ -91,7 +91,7 @@ Uso
 En el caso de arriba está cada campo con su "name" y un elemento "p" que contendrá el error. Cada "p" debe tener un id.
 El elemento que lo envia es un input del tipo submit con un "id" llamado "enviar".
 
-- 4- En tu archivo javascript donde pondrás el código que valida (en mi caso functions.js) deverás hacerlo de la siguiente forma:
+- 4- En tu archivo javascript donde pondrás el código que valida (en mi caso functions.js) deberás hacerlo de la siguiente forma:
 Escribir una variable tipo JSON con todos los campos a validar donde se indica el tipo de validación, name del campo, el ide del elemento donde se mostrará el error y el mensaje de error que aparecerá en él.
 
 ```sh
@@ -179,7 +179,7 @@ PulentoFormulario.validarEnviar(
   todoMal                  // Función si se procesó bien. Tipo: function. Sólo debe pasarse el nombre de la función sin "()".
 );
 ```
-Los últimos 2 parámetros (que en este caso se llaman "todoBien" y "todoMal" son funciones que puedes crear para mostrar algún mensaje de éxito o fracazo una vez que se haya validado y enviado el formulario.
+Los últimos 2 parámetros (que en este caso se llaman "todoBien" y "todoMal" son funciones que puedes crear para mostrar algún mensaje de éxito o fracaso una vez que se haya validado y enviado el formulario.
 Éstas funciones las defines tú.
 
 En el demo he creado las funciones para que muestre una modal con el éxito o fracaso del envío de los datos del formulario a un archivo .txt. Tú puedes hacerlo con un archivo php o lo que sea siempre y cuando devuelvas un "ok" si todo salió bien y un "ko" si no se concretó la operación.
@@ -201,12 +201,3 @@ MIT
 
 Boris Hernández.
 [cajonarium.cl](http://www.cajonarium.cl/)
-
-
-
-
-
-
-
-
-
