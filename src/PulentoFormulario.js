@@ -216,6 +216,7 @@ PulentoFormulario.validar = function(formulario, btnEnviar, arrayValidacion){
 
             if (!PulentoFormulario[tipoVal](campoVal, muestraErrorVal, txtError)) {
                 OK = false;
+                arrayValidacion[i].classList.add('error');
             }
         }
 
