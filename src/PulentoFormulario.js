@@ -25,12 +25,12 @@ PulentoFormulario.campoObligatorio = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -39,12 +39,12 @@ PulentoFormulario.campoNumerico = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( isNaN(valor) || valor.length == 0 || /^\s+$/.test(valor) ) {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -54,12 +54,12 @@ PulentoFormulario.campoEmail = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( !expr.test(valor) || valor.length == 0 || /^\s+$/.test(valor)) {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -69,12 +69,12 @@ PulentoFormulario.campoSoloTexto = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if(!expr.test(valor)){
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -83,7 +83,7 @@ PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
     var suma=0;
     var numeros=Array(3, 2, 7, 6, 5, 4, 3, 2);
     // var rut = document.getElementsByName(nameCampo);
-    var rut = document.getElementsByName("rut")[0];
+    var rut = document.getElementsByName(nameCampo)[0];
 
     for (var i = 0; i <= rut.value.length-3; i++) {
             var m =(10-rut.value.length)+i
@@ -102,12 +102,12 @@ PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
     var digito = rut.value.substr(rut.value.length-1,1).toUpperCase();
     if(digito != dv  || digito.length == 0 || /^\s+$/.test(digito)){
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -116,12 +116,12 @@ PulentoFormulario.telefonoCL = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( !(/^\+\d{2,3}\s\d{9}$/.test(valor)) ) {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -130,12 +130,12 @@ PulentoFormulario.campoFecha = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if ( !(/^\d{2}\-\d{2}\-\d{4}$/.test(valor)) ) {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -144,12 +144,12 @@ PulentoFormulario.lista = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( valor == null || valor == 0 )  {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -158,12 +158,12 @@ PulentoFormulario.checkbox = function(nameCampo, idError, txtError){
     checkbox = document.getElementsByName(nameCampo)[0];
     if( !checkbox.checked)  {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
     }
 }
@@ -179,18 +179,15 @@ PulentoFormulario.radioButton = function(nombreRadioButton, idError, txtError){
     }
     if(!seleccionado) {
         document.getElementById(idError).innerHTML = txtError;
-        document.getElementById(idError).classList.add('pulentoError');
+        document.getElementsByName(nombreRadioButton)[0].classList.add('pulentoError');
         return false;
 
     }else{
         document.getElementById(idError).innerHTML = "";
-        document.getElementById(idError).classList.remove('pulentoError');
+        document.getElementsByName(nombreRadioButton)[0].classList.remove('pulentoError');
         return true;
     }
 }
-
-
-
 
 // MÉTODO que recorre y valida los elementos del formulario ------------------
 PulentoFormulario.soloValidar = function(formulario, btnEnviar, arrayValidacion){

@@ -21,7 +21,7 @@ gulp.task('js', function () {
 	.pipe(uglify())
 	.on("error", notify.onError("<%= error.message %>"))
 	.pipe(rename({suffix: '.min'}))
-	.pipe(gulp.dest('demo/'))
+	.pipe(gulp.dest('demo/js'))
 	.pipe(notify({ message: 'js listo!'}));
 });
 
