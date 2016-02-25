@@ -34,7 +34,7 @@ gulp.task('libs', function () {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('src/js/*.js', ['js']);
+	gulp.watch('src/*.js', ['js']);
 	gulp.watch('src/js/libs/*.jss', ['libs']);
 	gulp.watch('src/images/**/*', ['images']);
 

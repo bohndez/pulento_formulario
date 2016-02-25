@@ -173,7 +173,7 @@ PulentoFormulario.validarEnviar(
   'enviar',                // Botón o elemento que al hacer click valida los datos. Tipo: string con el id del elemento.
   formulario1,             // Array con los elementos a validar. Tipo: Array con JSON dentro.
   true,                    // Envío por ajax a un PHP que lo procese. Tipo boolean. Con true envía, con false sólo valida y no envía.
-  'POST',                   // Método de envío. Tipo string y acepta sólo "POST" o "GET"
+  'POST',                  // Método de envío. Tipo string y acepta sólo "POST" o "GET"
   "controlador.txt",       // Archivo (o ruta del archivo) que lo procesa. Tipo: string con la ruta del archivo que lo procesa.
   todoBien,                // Función si se procesó bien. Tipo: function. Sólo debe pasarse el nombre de la función sin "()".
   todoMal                  // Función si se procesó bien. Tipo: function. Sólo debe pasarse el nombre de la función sin "()".
