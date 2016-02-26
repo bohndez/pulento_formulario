@@ -8,20 +8,18 @@ No necesita jQuery ni librerías extra.
 Tipos de campo para validar
 --------------------------
 
-
-
 Por ahora puedes validar todos estos campos:
 
-- Campo Obligatorio.
-- Campo Numerico.
-- Campo Email.
-- Campo Sólo Texto.
-- Rut Chileno.
-- Teléfono Chileno.
-- Campo de Fecha
-- Radio Button
-- Lista (Select).
-- Checkbox.
+- Campo Obligatorio. "campoObligatorio".
+- Campo Numerico. "campoNumerico".
+- Campo Email. "campoEmail".
+- Campo Sólo Texto. "campoSoloTexto".
+- Rut Chileno. "rutCL".
+- Teléfono Chileno. "telefonoCL".
+- Campo de Fecha. "campoFecha".
+- Radio Button. "radioButton".
+- Lista (Select). "lista".
+- Checkbox. "checkbox".
 
 Luego se irán añadiendo más tipos de validación, más formatos de rut y teléfonos.
 
@@ -151,7 +149,7 @@ var formulario1 = [
     mensajeError   : 'Debe escribir algo'
   },
   {
-    tipo           : '3',
+    tipo           : 'lista',
     nameCampo      : 'select',
     idMuestraError : 'listaError',
     mensajeError   : 'Debe elegir uno'

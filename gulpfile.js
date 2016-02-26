@@ -6,13 +6,10 @@
 
 //Dependencias - - -
 var gulp 		= require('gulp'),
-	cambio		= require('gulp-changed'),
 	concat 		= require('gulp-concat'),
 	uglify 		= require('gulp-uglify'),
-	minifyCSS 	= require('gulp-minify-css'),
 	notify 		= require('gulp-notify'),
 	livereload 	= require('gulp-livereload'),
-	cache 		= require('gulp-cache'),
 	rename 		= require('gulp-rename');
 
 //Tareas - - - - - -

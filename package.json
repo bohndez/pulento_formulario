@@ -18,8 +18,6 @@
   "homepage": "https://github.com/bohndez/flujo_web#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-cache": "^0.2.10",
-    "gulp-changed": "^1.2.1",
     "gulp-concat": "^2.6.0",
     "gulp-livereload": "^3.8.0",
     "gulp-minify-css": "^1.2.0",
