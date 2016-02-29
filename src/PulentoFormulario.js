@@ -85,9 +85,22 @@ PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
     // var rut = document.getElementsByName(nameCampo);
     var rut = document.getElementsByName(nameCampo)[0];
 
-    for (var i = 0; i <= rut.value.length-3; i++) {
-            var m =(10-rut.value.length)+i
-            suma+= numeros[m]*rut.value.substr(i,1);
+    // console.log('rut: '+ rut)
+
+    var rutB = rut.value.split(".");
+    // console.log(rutB);
+
+    var aux = "";
+    for (var i = 0; i < rutB.length; i++) {
+        aux += rutB[i];
+    };
+    
+    // console.log('rut: '+aux);
+    rut = aux;
+    
+    for (var i = 0; i <= rut.length-3; i++) {
+            var m =(10-rut.length)+i
+            suma+= numeros[m]*rut.substr(i,1);
     };
     var dv;
     if (11-(suma%11) == 10){
@@ -99,7 +112,8 @@ PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
     else{
         dv = 11-(suma%11);
     }
-    var digito = rut.value.substr(rut.value.length-1,1).toUpperCase();
+
+    var digito = rut.substr(rut.length-1,1).toUpperCase();
     if(digito != dv  || digito.length == 0 || /^\s+$/.test(digito)){
         document.getElementById(idError).innerHTML = txtError;
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
@@ -114,12 +128,21 @@ PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
 
 PulentoFormulario.telefonoCL = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
-    if( !(/^\+\d{2,3}\s\d{9}$/.test(valor)) ) {
+
+    var aux = false;
+
+    if ( (/^\+\d{2,3}\s\d{8}$/.test(valor)) ) {
+        aux = true;
+    } else if( (/^\+\d{10,11}$/.test(valor)) ){
+        aux = true;
+    }
+
+    if( !aux ) {
         document.getElementById(idError).innerHTML = txtError;
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
-    }else{
+    } else {
         document.getElementById(idError).innerHTML = "";
         document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
         return true;
