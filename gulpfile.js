@@ -14,29 +14,20 @@ var gulp 		= require('gulp'),
 
 //Tareas - - - - - -
 gulp.task('js', function () {
-	return gulp.src('src/*.js')
+	return gulp.src('src/PulentoFormulario.js')
 	.pipe(uglify())
 	.on("error", notify.onError("<%= error.message %>"))
 	.pipe(rename({suffix: '.min'}))
 	.pipe(gulp.dest('demo/js'))
+	.pipe(gulp.dest('src'))
 	.pipe(notify({ message: 'js listo!'}));
-});
-
-gulp.task('libs', function () {
-	return gulp.src('src/js/libs/*.js')
-	.pipe(concat('libs.min.js'))
-	.pipe(uglify())
-	.on("error", notify.onError("<%= error.message %>"))
-	.pipe(gulp.dest('dist/assets/js/libs/'))
 });
 
 gulp.task('watch', function() {
 	gulp.watch('src/*.js', ['js']);
-	gulp.watch('src/js/libs/*.jss', ['libs']);
-	gulp.watch('src/images/**/*', ['images']);
 
 	livereload.listen();
 	gulp.watch(['dist/**']).on('change', livereload.changed);
 });
 
-gulp.task('default', ['js', 'libs', 'watch']);
+gulp.task('default', ['js', 'watch']);

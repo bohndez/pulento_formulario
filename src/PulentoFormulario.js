@@ -82,20 +82,16 @@ PulentoFormulario.campoSoloTexto = function(nameCampo, idError, txtError){
 PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
     var suma=0;
     var numeros=Array(3, 2, 7, 6, 5, 4, 3, 2);
-    // var rut = document.getElementsByName(nameCampo);
+
     var rut = document.getElementsByName(nameCampo)[0];
 
-    // console.log('rut: '+ rut)
-
     var rutB = rut.value.split(".");
-    // console.log(rutB);
 
     var aux = "";
     for (var i = 0; i < rutB.length; i++) {
         aux += rutB[i];
     };
     
-    // console.log('rut: '+aux);
     rut = aux;
     
     for (var i = 0; i <= rut.length-3; i++) {

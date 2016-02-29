@@ -39,66 +39,72 @@ Uso
 <script src="js/functions.js"></script>
 ```
 
-- 3- En tu HTML deberás tener un campo con su "name" y un elemento html con un "id" donde irá el mensaje de error (puede ser un p, span, div, etc) y el elemento que al hacer click lo validará. Por ejemplo:
+- 3- En tu HTML deberás tener el form y cada campo del form con un "name" y un elemento html con un "id" donde irá el mensaje de error (puede ser un p, span, div, etc) y el elemento que al hacer click lo validará (puede ser un button, div, p, etc). Por ejemplo:
 
 ```sh
-<form name="unFormulario" action="">
-  <input name="obligatorio" type="text" placeholder="obligatorio">
-  <p id="obligatorioError"></p>
 
-  <input name="numerico" type="text" placeholder="numerico">
-  <p id="numericoError"></p>
 
-  <input name="email" type="text" placeholder="email">
-  <p id="emailError"></p>
+<form name="unFormulario" action=""><!-- name del formulario: "unFormulario" -->
 
-  <input name="soloTexto" type="text" placeholder="soloTexto">
-  <p id="soloTextoError"></p>
+    <input name="obligatorio" type="text" placeholder="obligatorio"><!-- Campo con su nombre -->
+    <p id="obligatorioError"></p><!-- Elemento donde irá el mensaje de error. Debe tener un id  -->
 
-  <input name="rut" type="text" placeholder="rut">
-  <p id="rutError"></p>
+    <input name="numerico" type="text" placeholder="numerico">
+    <p id="numericoError"></p>
 
-  <input name="telefono" type="text" placeholder="+569 123456789">
-  <p id="telefonoError"></p>
+    <input name="email" type="text" placeholder="email">
+    <p id="emailError"></p>
 
-  <input name="fecha" type="text" placeholder="DD-MM-AAAA">
-  <p id="fechaError"></p>
+    <input name="soloTexto" type="text" placeholder="soloTexto">
+    <p id="soloTextoError"></p>
+
+    <input name="rut" type="text" placeholder="rut">
+    <p id="rutError"></p>
+
+    <input name="telefono" type="text" placeholder="+569 123456789">
+    <p id="telefonoError"></p>
+
+    <input name="fecha" type="text" placeholder="DD-MM-AAAA">
+    <p id="fechaError"></p>
+
+    <input name="opcion" type="radio" value="uno"> uno
+    <input name="opcion" type="radio" value="dos"> dos
+    <input name="opcion" type="radio" value="tres"> tres
+    <p id="opcionError"></p>
+
+    <textarea name="textArea" id="" cols="30" rows="10"></textarea>
+    <p id="textAreaError"></p>
+
+    <select name="select" id="">
+        <option value="">elija uno</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <p id="listaError"></p>
+
+    <input type="checkbox" name="checkbox" value="chequeado"> seleccione.
+    <p id="checkboxError"></p>
+
+    <input name="btn" id="enviar" type="submit" value="enviar"><!-- Elemento que al hacer click validará y enviará el información del formulario -->
   
-  <input name="opcion" type="radio" value="uno"> uno
-  <input name="opcion" type="radio" value="dos"> dos
-  <input name="opcion" type="radio" value="tres"> tres
-  <p id="opcionError"></p>
-
-  <textarea name="textArea" id="" cols="30" rows="10"></textarea>
-  <p id="textAreaError"></p>
-
-  <select name="select" id="">
-      <option value="">elija uno</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-  </select>
-  <p id="listaError"></p>
-
-  <input type="checkbox" name="checkbox" value="chequeado"> seleccione.
-  <p id="checkboxError"></p>
-
-  <input name="btn" id="enviar" type="submit" value="enviar">
 </form>
+
 ```
 
 En el caso de arriba está cada campo con su "name" y un elemento "p" que contendrá el error. Cada "p" debe tener un id.
 El elemento que lo envia es un input del tipo submit con un "id" llamado "enviar".
 
 - 4- En tu archivo javascript donde pondrás el código que valida (en mi caso functions.js) deberás hacerlo de la siguiente forma:
-Escribir una variable tipo JSON con todos los campos a validar donde se indica el tipo de validación, name del campo, el ide del elemento donde se mostrará el error y el mensaje de error que aparecerá en él.
+Crea una variable de tipo Array que contendrá elementos JSON con todos los campos a validar donde se indica el tipo de validación (Ver "Tipos de campo para validar" más arriba en este documento), name del campo, el id del elemento donde se mostrará el error y el mensaje de error que aparecerá en él.
 
 ```sh
+
 var formulario1 = [
   {
-    tipo           : 'campoObligatorio',
-    nameCampo      : 'obligatorio',
-    idMuestraError : 'obligatorioError',
-    mensajeError   : 'Campo Obligatorio'
+    tipo           : 'campoObligatorio',     // Tipo de validación.
+    nameCampo      : 'obligatorio',          // Nombre del campo a validar.
+    idMuestraError : 'obligatorioError',     // Id del elemento que muestra el mensaje de error.
+    mensajeError   : 'Campo Obligatorio'     // Mensaje de error que aparecerá cuando el campo no sea válido.
   },
   {
     tipo           : 'campoNumerico',
@@ -161,13 +167,14 @@ var formulario1 = [
     mensajeError   : 'Debe chequearlo'
   }
 ];
+
 ```
 
 
 - 5- Finalmente llamamos al método que valida y le pasamos el JSON con los campos y los isguientes parámetros:
 ```sh
 PulentoFormulario.validarEnviar(
-  'unFormulario',          // Formulario a validar. Tipo: string con el name del formulario.
+  'unFormulario',          // Nombre del formulario a validar. Tipo: string con el name del formulario.
   'enviar',                // Botón o elemento que al hacer click valida los datos. Tipo: string con el id del elemento.
   formulario1,             // Array con los elementos a validar. Tipo: Array con JSON dentro.
   true,                    // Envío por ajax a un PHP que lo procese. Tipo boolean. Con true envía, con false sólo valida y no envía.
