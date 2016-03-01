@@ -127,9 +127,9 @@ PulentoFormulario.telefonoCL = function(nameCampo, idError, txtError){
 
     var aux = false;
 
-    if ( (/^\+\d{2,3}\s\d{8}$/.test(valor)) ) {
+    if ( (/^\+\d{3}\s\d{8}$/.test(valor)) ) {
         aux = true;
-    } else if( (/^\+\d{10,11}$/.test(valor)) ){
+    } else if( (/^\+\d{11}$/.test(valor)) ){
         aux = true;
     }
 
