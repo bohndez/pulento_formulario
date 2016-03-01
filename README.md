@@ -15,7 +15,7 @@ Por ahora puedes validar todos estos campos:
 - Campo Email. "campoEmail".
 - Campo Sólo Texto. "campoSoloTexto".
 - Rut Chileno. "rutCL".
-- Teléfono Chileno. "telefonoCL".
+- Teléfono Chileno. "telefonoCL". Valida con +569 12345678.
 - Campo de Fecha. "campoFecha".
 - Radio Button. "radioButton".
 - Lista (Select). "lista".
