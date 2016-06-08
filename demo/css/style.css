@@ -13,17 +13,39 @@ h1{
 .oculto {
     display: none;
 }
-.contenedor{
+
+section{
+    background: #F7F7F7;
+}
+.contenedor_formulario{
     width: 50%;
     margin: 0 25%;
+    padding: 0 0 20px 0;
 }
-input[type="text"],input[type="submit"], textarea, select{
+input[type="text"], textarea, select{
     width: 100%;
+    height: 30px;
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    text-indent: 10px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    border-radius: 3px;
+            appearance: none;
+    -webkit-appearance: none;
+}
+input[type="submit"]{
+    width: 150px;
     height: 30px;
     margin: 10px 0 0 0;
     font-size: 16px;
     border: 1px solid #000;
     box-sizing: border-box;
+    border-radius: 3px;
+            appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    margin: 10px auto;
 }
 textarea{
     height: 50px;
@@ -39,6 +61,10 @@ input[type="checkbox"]{
 form p{
     color: #f09;
 }
+.error{
+    height: 20px;
+}
+
 #modal1{
     width: 100%;
     height: 100%;

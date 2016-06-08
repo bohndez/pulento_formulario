@@ -8,55 +8,62 @@
 
 </head>
 <body>
-    <h1>Pulento Formulario</h1>
-    <div class="contenedor">
-        <form name="unFormulario" action="">
-            <input name="obligatorio" type="text" placeholder="obligatorio">
-            <p id="obligatorioError"></p>
+    <section>
+        <h1>Pulento Formulario</h1>
+        <div class="contenedor_formulario">
+            <form name="unFormulario" action="">
+                <input name="obligatorio" type="text" placeholder="obligatorio">
+                <p id="obligatorioError" class="error"></p>
 
-            <input name="numerico" type="text" placeholder="numerico">
-            <p id="numericoError"></p>
+                <input name="numerico" type="text" placeholder="numerico">
+                <p id="numericoError" class="error"></p>
 
-            <input name="email" type="text" placeholder="email">
-            <p id="emailError"></p>
+                <input name="email" type="text" placeholder="email">
+                <p id="emailError" class="error"></p>
 
-            <input name="soloTexto" type="text" placeholder="soloTexto">
-            <p id="soloTextoError"></p>
+                <input name="soloTexto" type="text" placeholder="soloTexto">
+                <p id="soloTextoError" class="error"></p>
 
-            <input name="rut" type="text" placeholder="rut">
-            <p id="rutError"></p>
+                <input name="rut" type="text" placeholder="rut">
+                <p id="rutError" class="error"></p>
 
-            <input name="telefono" type="text" placeholder="+569 123456789">
-            <p id="telefonoError"></p>
+                <input name="telefono" type="text" placeholder="+569 123456789">
+                <p id="telefonoError" class="error"></p>
 
-            <input name="fecha" type="text" placeholder="DD-MM-AAAA">
-            <p id="fechaError"></p>
+                <input name="fecha" type="text" placeholder="DD-MM-AAAA">
+                <p id="fechaError" class="error"></p>
+                
+                <input name="opcion" type="radio" value="uno"> uno
+                <input name="opcion" type="radio" value="dos"> dos
+                <input name="opcion" type="radio" value="tres"> tres
+                <p id="opcionError" class="error"></p>
+
+                <textarea name="textArea" id="" cols="30" rows="10" placeholder="Escriba un texto..."></textarea>
+                <p id="textAreaError" class="error"></p>
+
+                <select name="select" id="">
+                    <option value="">elija uno</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+                <p id="listaError" class="error"></p>
+
+                <input type="checkbox" name="checkbox" value="chequeado"> seleccione.
+                <p id="checkboxError" class="error"></p>
+
+                <input name="btn" id="enviar" type="submit" value="enviar">
+            </form>
             
-            <input name="opcion" type="radio" value="uno"> uno
-            <input name="opcion" type="radio" value="dos"> dos
-            <input name="opcion" type="radio" value="tres"> tres
-            <p id="opcionError"></p>
+        </div>
+    </section>
 
-            <textarea name="textArea" id="" cols="30" rows="10"></textarea>
-            <p id="textAreaError"></p>
-
-            <select name="select" id="">
-                <option value="">elija uno</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-            </select>
-            <p id="listaError"></p>
-
-            <input type="checkbox" name="checkbox" value="chequeado"> seleccione.
-            <p id="checkboxError"></p>
-
-            <input name="btn" id="enviar" type="submit" value="enviar">
-        </form>
-    </div>
+    <!-- MODALES SI TODO RESULTA BIEN -->
     <div id="modal1" class="oculto">
         <p>¡PULENTO!</p>
         <div class="cerrar">CERRAR</div>
     </div>
+
+    <!-- MODAL SI TODO RESULTA MAL -->
     <div id="modal2" class="oculto">
         <p>¡MALASO!</p>
         <div class="cerrar">CERRAR</div>

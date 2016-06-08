@@ -9,8 +9,6 @@ function crearAjax(){
     return ajax;
 }
 
-
-
 // CLASE PulentoFormulario ==============================================
 /**
  * Se crea la clase PulentoFormulario.
@@ -25,6 +23,7 @@ PulentoFormulario.campoObligatorio = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -39,6 +38,7 @@ PulentoFormulario.campoNumerico = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( isNaN(valor) || valor.length == 0 || /^\s+$/.test(valor) ) {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -54,6 +54,7 @@ PulentoFormulario.campoEmail = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( !expr.test(valor) || valor.length == 0 || /^\s+$/.test(valor)) {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -69,6 +70,7 @@ PulentoFormulario.campoSoloTexto = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if(!expr.test(valor)){
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -82,16 +84,12 @@ PulentoFormulario.campoSoloTexto = function(nameCampo, idError, txtError){
 PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
     var suma=0;
     var numeros=Array(3, 2, 7, 6, 5, 4, 3, 2);
-
     var rut = document.getElementsByName(nameCampo)[0];
-
     var rutB = rut.value.split(".");
-
     var aux = "";
     for (var i = 0; i < rutB.length; i++) {
         aux += rutB[i];
     };
-    
     rut = aux;
     
     for (var i = 0; i <= rut.length-3; i++) {
@@ -112,9 +110,9 @@ PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
     var digito = rut.substr(rut.length-1,1).toUpperCase();
     if(digito != dv  || digito.length == 0 || /^\s+$/.test(digito)){
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
-
     }else{
         document.getElementById(idError).innerHTML = "";
         document.getElementsByName(nameCampo)[0].classList.remove('pulentoError');
@@ -124,9 +122,7 @@ PulentoFormulario.rutCL = function(nameCampo, idError, txtError){
 
 PulentoFormulario.telefonoCL = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
-
     var aux = false;
-
     if ( (/^\+\d{3}\s\d{8}$/.test(valor)) ) {
         aux = true;
     } else if( (/^\+\d{11}$/.test(valor)) ){
@@ -135,6 +131,7 @@ PulentoFormulario.telefonoCL = function(nameCampo, idError, txtError){
 
     if( !aux ) {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -149,6 +146,7 @@ PulentoFormulario.campoFecha = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if ( !(/^\d{2}\-\d{2}\-\d{4}$/.test(valor)) ) {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -163,6 +161,7 @@ PulentoFormulario.lista = function(nameCampo, idError, txtError){
     valor = document.getElementsByName(nameCampo)[0].value;
     if( valor == null || valor == 0 )  {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -177,6 +176,7 @@ PulentoFormulario.checkbox = function(nameCampo, idError, txtError){
     checkbox = document.getElementsByName(nameCampo)[0];
     if( !checkbox.checked)  {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nameCampo)[0].classList.add('pulentoError');
         return false;
 
@@ -198,6 +198,7 @@ PulentoFormulario.radioButton = function(nombreRadioButton, idError, txtError){
     }
     if(!seleccionado) {
         document.getElementById(idError).innerHTML = txtError;
+        document.getElementById(idError).classList.add('textoError');
         document.getElementsByName(nombreRadioButton)[0].classList.add('pulentoError');
         return false;
 
