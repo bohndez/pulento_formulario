@@ -181,7 +181,7 @@ PulentoFormulario.validarEnviar(
   'POST',                  // Método de envío. Tipo string y acepta sólo "POST" o "GET"
   "controlador.txt",       // Archivo (o ruta del archivo) que lo procesa. Tipo: string con la ruta del archivo que lo procesa.
   todoBien,                // Función si se procesó bien. Tipo: function. Sólo debe pasarse el nombre de la función sin "()".
-  todoMal                  // Función si se procesó bien. Tipo: function. Sólo debe pasarse el nombre de la función sin "()".
+  todoMal                  // Función si es que no funció el guardado o hubo un problema. Tipo: function. Sólo debe pasarse el nombre de la función sin "()".
 );
 ```
 Los últimos 2 parámetros (que en este caso se llaman "todoBien" y "todoMal" son funciones que puedes crear para mostrar algún mensaje de éxito o fracaso una vez que se haya validado y enviado el formulario.
